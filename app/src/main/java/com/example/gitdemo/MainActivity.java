@@ -1,13 +1,13 @@
 package com.example.gitdemo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @author cheng 韩志城
@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         mTextView = findViewById(R.id.textView);
         mButtonSub = findViewById(R.id.buttonSub);
 
-        if (savedInstanceState != null){
-            number=savedInstanceState.getInt("NUMBER");
+        if (savedInstanceState != null) {
+            number = savedInstanceState.getInt("NUMBER");
         }
 
         mTextView.setText(String.valueOf(number));
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("NUMBER",number);
+        outState.putInt("NUMBER", number);
     }
 
 }
