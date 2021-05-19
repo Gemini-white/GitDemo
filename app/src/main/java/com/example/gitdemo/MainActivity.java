@@ -11,22 +11,21 @@ import android.widget.TextView;
  * @author cheng
  */
 public class MainActivity extends AppCompatActivity {
-    private int number=0;
-    private Button mButtonadd;
+    private int number = 0;
+    private Button mButtonadd, mButtonSub;
     private TextView mTextView;
-    private Button mButtonSub;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mButtonadd=findViewById(R.id.buttonApp);
-        mTextView=findViewById(R.id.textView);
-        mButtonSub=findViewById(R.id.buttonSub);
+        mButtonadd = findViewById(R.id.buttonApp);
+        mTextView = findViewById(R.id.textView);
+        mButtonSub = findViewById(R.id.buttonSub);
 
         mTextView.setText(String.valueOf(number));
-        mButtonadd.setOnClickListener(v -> { mTextView.setText(String.valueOf(++number)); });
-        mButtonSub.setOnClickListener(v -> { mTextView.setText(String.valueOf(--number)); });
+        mButtonadd.setOnClickListener(v -> mTextView.setText(String.valueOf(++number)));
+        mButtonSub.setOnClickListener(v -> mTextView.setText(String.valueOf(--number)));
     }
 }
