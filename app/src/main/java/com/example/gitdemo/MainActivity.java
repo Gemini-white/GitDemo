@@ -41,4 +41,23 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("NUMBER", number);
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.zero: {
+                mTextView.setText(String.valueOf(number = 0));
+                break;
+            }
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
